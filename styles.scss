@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+// resets
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Rubik', sans-serif;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+// head section containing Colouroo title and button
+.header {
+    text-align: center;
+    padding: 1.5em;
+    width: 100%;
+    background-color: #7BDFF2;
+    color: #fff;
+
+    // Colouroo heading 
+    h1 {
+        letter-spacing: 0.5rem;
+        font-size: 1rem;
+        color: #003a46;
+        margin-bottom: 0.75em;
+    }
+
+    // button to generate color scheme
+    .main-button {
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #fff;
+        width: 100%;
+        padding: 1em;
+        margin: 0 auto;
+        border-radius: 100vh;
+        text-decoration-line: none;
+        border: none;
+        background-color: #DA627D;
+        width: 100%;
+        max-width: 30em;
+    }
+}
+
+
+// palette section
+#colors-palette {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    &:nth-child(1) {
+        background-color: #ffffff;
+    }
+    &:nth-child(2) {
+        background-color: #ffffff;
+    }
+    &:nth-child(3) {
+        background-color: #ffffff;
+    }
+    &:nth-child(4) {
+        background-color: #ffffff;
+    }
+    &:nth-child(5) {
+        background-color: #ffffff;
+    }
+}
+
+.colors {
+    height: 100%;
+    width: 100%;
+}
+
+
+// sample card section
+#sample-website {
+    flex: 1;
+    background-color: rgb(95, 95, 95);
+    position: relative;
+    padding: 10% 0;
+
+    // card
+    .card-section {
+        width: 60%;
+        max-width: 400px;
+        border-radius: clamp(25px, 2em, 3em);
+        background-color: #fff;
+        margin: 0 auto;
+        height: fit-content;
+
+        //main image in card
+        img {
+            width: 100%;
+            max-width: clamp(100%, 100%, 400px);
+            height: auto;
+            border-radius: clamp(25px, 2em, 3em) clamp(25px, 2em, 3em) 0 0;
+        }
+
+        // text content and button in card
+        .card-content {
+            padding: 1em;
+            text-align: center;
+            h1 {
+                font-size: clamp(14px, 4vw, 32px);
+                margin-bottom: 1em;
+            }
+            p {
+                font-size: clamp(12px, 4vw, 24px);
+                margin-bottom: 1em;
+                text-align: left;
+            }
+            .btn-card {
+                border: none;
+                width: 100%;
+                font-size: clamp(12px, 4vw, 24px);
+                padding: 0.5em;
+                border-radius: clamp(25px, 2em, 3em);
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+        color: #fff;
+    }
+}
+
+
+// desktop view
+@media screen and (min-width: 768px) {
+
+    // change flex direction from column to row
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+    #colors-palette {
+
+        //change flex direction from row to column
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 3.75em - 0.75rem - 2em - 0.825rem);
+        .colors {
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+    .main-button {
+        &:hover {
+            background-color: #b63551;
+        }
+        &:active {
+            background-color: #912038;
+        }
+    }
+}
